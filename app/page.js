@@ -45,7 +45,7 @@ export default async function Page() {
             if (!acc[category]) acc[category] = [];
             acc[category].push(post);
             return acc;
-          }, {})
+          }, {}),
         ).map(([category, categoryPosts]) => (
           <details key={category} open>
             <summary className={styles.subheading}>{category}</summary>
