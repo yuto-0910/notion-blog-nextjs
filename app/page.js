@@ -45,12 +45,13 @@ export default async function Page() {
             if (!acc[category]) acc[category] = [];
             acc[category].push(post);
             return acc;
-          }, {})
-        ).map(([category, posts]) => (
+          },
+          )
+        ).map(([category, categoryPosts]) => (
           <details key={category} open>
             <summary className={styles.subheading}>{category}</summary>
             <ol className={styles.posts}>
-              {posts.map((post) => {
+              {categoryPosts.map((post) => {
                 const date = new Date(post.last_edited_time).toLocaleString('en-US', {
                   month: 'short',
                   day: '2-digit',
